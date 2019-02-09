@@ -1,0 +1,98 @@
+openapi: 3.0.0
+info:
+  version: 1.0.0
+  title: Email Sender
+  license:
+    name: MIT
+servers:
+  - url: 'http://email.networknt.com'
+paths:
+  '/counter':
+    get:
+      summary: Number of email sent since the server started
+      operationId: getCounter
+      tags:
+        - counter
+      security:
+        - email_auth:
+            - 'email.r'
+      responses:
+        '200':
+          description: A long number that is the number of emails sent
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Counter'
+              example:
+                count: 100
+  '/sender':
+    get:
+      summary: Number of email sent per senders
+      operationId: getSender
+      tags:
+        - sender
+      security:
+        - email_auth:
+            - 'email.r'
+      responses:
+        '200':
+          description: A map of sender address and the number of emails sent for the address
+          content:
+            application/json:
+              example:
+                noreply@networknt.com: 1000
+                noreply@lightapi.net: 93
+                noreply@taiji.io: 19832
+
+  '/email':
+    get:
+      summary: The last email sent out from this server
+      operationId: getEmail
+      tags:
+        - email
+      security:
+        - email_auth:
+            - 'email.r'
+      responses:
+        '200':
+          description: Last email sent in json format
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Email'
+              example:
+                from: noreply@networknt.com
+                to: stevehu@gmail.com
+                body: Hello World
+components:
+  securitySchemes:
+    email_auth:
+      type: oauth2
+      description: This API uses OAuth 2 with the client credential grant flow.
+      flows:
+        clientCredentials:
+          tokenUrl: 'https://localhost:6882/token'
+          scopes:
+            'email.r': read service
+  schemas:
+    Counter:
+      type: object
+      required:
+        - count
+      properties:
+        count:
+          type: integer
+          format: int64
+    Email:
+      type: object
+      required:
+        - from
+        - to
+        - body
+      properties:
+        from:
+          type: string
+        to:
+          type: string
+        body: 
+          type: string
