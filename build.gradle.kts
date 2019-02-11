@@ -1,5 +1,3 @@
-import org.jetbrains.kotlin.gradle.dsl.KotlinCompile
-
 plugins {
     application
     kotlin("jvm") version "1.3.21"
@@ -70,7 +68,7 @@ dependencies {
 
     // assertk
     val assertkVersion: String by project
-    compile("com.willowtreeapps.assertk", "assertk-jvm", assertkVersion)
+    testCompile("com.willowtreeapps.assertk", "assertk-jvm", assertkVersion)
 
 }
 
