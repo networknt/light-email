@@ -22,3 +22,5 @@ The taiji-blockchain has a service called KYC (Know Your Client), and it needs t
 * High availability supported by the Kafka partitions. 
 
 * The Kafka topic is configurable so that it can be named anything to follow the convention of each organization. 
+
+* Support aggregate of events and send one email in a batch for example per 30 minutes window. 
