@@ -17,18 +17,8 @@ out/
 *.zip
 *.bak
 *.versionsBackup
-
+dependency-reduced-pom.xml
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
-!rest.zip
-/bin/
-bot-cli/bin/
-exec-*/bin/
 
-exec-core/bin/
-exec-develop-build/bin/
-exec-regex-replace/bin/
-exec-release-docker/bin/
-exec-release-maven/bin/
-exec-version-upgrade/bin/
