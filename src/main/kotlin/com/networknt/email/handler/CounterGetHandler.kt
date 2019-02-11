@@ -5,12 +5,9 @@ import io.undertow.server.HttpServerExchange
 import io.undertow.util.HttpString
 
 class CounterGetHandler : LightHttpHandler {
-
-
     @Throws(Exception::class)
     override fun handleRequest(exchange: HttpServerExchange) {
-        exchange.getResponseHeaders().add(HttpString("Content-Type"), "application/json")
-        exchange.getResponseSender().send("{\"count\":100}")
+        exchange.responseHeaders.add(HttpString("Content-Type"), "application/json")
+        exchange.responseSender.send("{\"count\":100}")
     }
-
 }
