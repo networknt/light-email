@@ -1,0 +1,48 @@
+{
+  "type": "record",
+  "name": "EmailUpdatedEvent",
+  "namespace": "com.networknt.email",
+  "fields": [
+    {
+      "name": "eventId",
+      "type": "string",
+      "doc": "A generated unique event id to identify the email"
+    },
+    {
+      "name": "to",
+      "type": ["null", "string"],
+      "default": null,
+      "doc": "the to addresses of the email"
+    },
+    {
+      "name": "cc",
+      "type": ["null", "string"],
+      "default": null,
+      "doc": "the cc addresses of the email"
+    },
+    {
+      "name": "bcc",
+      "type": ["null", "string"],
+      "default": null,
+      "doc": "the bcc addresses of the email"
+    },
+    {
+      "name": "subject",
+      "type": ["null", "string"],
+      "default": null,
+      "doc": "the subject of the email"
+    },
+    {
+      "name": "text",
+      "type": ["null", "string"],
+      "default": null,
+      "doc": "the text of the email"
+    },
+    {
+      "name": "description",
+      "type": ["null", "string"],
+      "default": null,
+      "doc": "the description of the email"
+    }
+  ]
+}

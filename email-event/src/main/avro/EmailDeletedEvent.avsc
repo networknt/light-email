@@ -1,0 +1,12 @@
+{
+  "type": "record",
+  "name": "EmailDeletedEvent",
+  "namespace": "com.networknt.email",
+  "fields": [
+    {
+      "name": "eventId",
+      "type": "string",
+      "doc": "A generated unique event id to identify the email"
+    }
+  ]
+}

@@ -23,4 +23,20 @@ The taiji-blockchain has a service called KYC (Know Your Client), and it needs t
 
 * The Kafka topic is configurable so that it can be named anything to follow the convention of each organization. 
 
-* Support aggregate of events and send one email in a batch for example per 30 minutes window. 
+* Support aggregate of events and send one email in a batch for example per 30 minutes window.
+
+### Components
+
+* email-event
+
+As it is an event sourcing application, all events are defined in this module with avro schema and generated events.
+
+* email-sender
+
+A Kafka streams micorservice that is responsible for process the email event stream and send out emails. 
+
+* email-producer
+
+A Kafka producer microservice that is responsible for accepting rest email request and put into the email topic on Kafka. 
+
+  

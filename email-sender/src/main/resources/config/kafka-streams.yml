@@ -1,0 +1,4 @@
+applicationId: email-streams
+bootstrapServers: localhost:9092
+processingGuarantee: exactly_once
+replicationFactor: 3
