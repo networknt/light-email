@@ -6,7 +6,7 @@ import com.networknt.server.StartupHookProvider
 import com.networknt.service.SingletonServiceFactory
 import com.networknt.utility.NetUtils
 
-class KycStartupHookProvider : StartupHookProvider {
+class EmailStartupHookProvider : StartupHookProvider {
 
     override fun onStartup() {
         // get host and port for this reader instance.

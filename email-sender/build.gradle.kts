@@ -14,6 +14,7 @@ dependencies {
     val light4jVersion: String by project
     // light-4j
     compile("com.networknt", "server", light4jVersion)
+    compile("com.networknt", "service", light4jVersion)
     compile("com.networknt", "handler", light4jVersion)
     compile("com.networknt", "info", light4jVersion)
     compile("com.networknt", "health", light4jVersion)
