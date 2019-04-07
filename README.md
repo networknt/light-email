@@ -39,4 +39,11 @@ A Kafka streams micorservice that is responsible for process the email event str
 
 A Kafka producer microservice that is responsible for accepting rest email request and put into the email topic on Kafka. 
 
-  
+### Topics
+
+By default, we have two topics that for emails. 
+
+* eamil-realtime is a topic that you send event to and the email sender will pick up messages and send out emails immediately. 
+
+* email-batch is a topic that you can push multiple events to the topic and an aggregated email will be sent out every 30 minutes.
+
